@@ -1,0 +1,86 @@
+openapi: 3.0.4
+info:
+  title: IBAN Validator
+  description: >-
+    IBAN Validator checks an IBAN's mod-97 checksum, its length and format for
+    the country, and national check digits where the country defines them. It
+    returns whether the IBAN is valid, the country and the reasons it fails.
+    Paid plans add the bank code, branch code and account number, the correct
+    check digits and the SEPA flag.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/ibanvalidator:
+    get:
+      summary: IBAN Validator
+      description: Validate an IBAN and break it into its parts
+      operationId: ibanvalidator
+      parameters:
+        - name: iban
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The IBAN to validate. Spaces, dashes and lower case are accepted
+          example: GB29NWBK60161331926819
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  iban: GB29NWBK60161331926819
+                  isValid: true
+                  formatted: GB29 NWBK 6016 1331 9268 19
+                  countryCode: GB
+                  countryName: United Kingdom
+                  checkDigits: '29'
+                  expectedLength: 22
+                  length: 22
+                  errors: []
+                  bban: NWBK60161331926819
+                  bankCode: NWBK
+                  branchCode: '601613'
+                  accountNumber: '31926819'
+                  nationalCheckDigits: null
+                  expectedCheckDigits: '29'
+                  isSEPA: true
+                  isQRIBAN: false
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
