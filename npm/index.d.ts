@@ -42,6 +42,15 @@ declare module '@apiverve/ibanvalidator' {
       expectedCheckDigits: null | string;
       isSEPA:              boolean | null;
       isQRIBAN:            boolean | null;
+      checks:              Checks;
+  }
+  
+  interface Checks {
+      country:             boolean | null;
+      length:              boolean | null;
+      format:              boolean | null;
+      checksum:            boolean | null;
+      nationalCheckDigits: null;
   }
 
   export default class ibanvalidatorWrapper {
