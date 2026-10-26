@@ -82,6 +82,27 @@ namespace APIVerve.API.IBANValidator
 
         [JsonProperty("isQRIBAN")]
         public bool? IsQriban { get; set; }
+
+        [JsonProperty("checks")]
+        public Checks Checks { get; set; }
+    }
+
+    public partial class Checks
+    {
+        [JsonProperty("country")]
+        public bool? Country { get; set; }
+
+        [JsonProperty("length")]
+        public bool? Length { get; set; }
+
+        [JsonProperty("format")]
+        public bool? Format { get; set; }
+
+        [JsonProperty("checksum")]
+        public bool? Checksum { get; set; }
+
+        [JsonProperty("nationalCheckDigits")]
+        public object NationalCheckDigits { get; set; }
     }
 
     public partial class Premium
