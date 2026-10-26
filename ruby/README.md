@@ -89,7 +89,14 @@ client = APIVerve::Ibanvalidator::Client.new(
     "nationalCheckDigits": null,
     "expectedCheckDigits": "29",
     "isSEPA": true,
-    "isQRIBAN": false
+    "isQRIBAN": false,
+    "checks": {
+      "country": true,
+      "length": true,
+      "format": true,
+      "checksum": true,
+      "nationalCheckDigits": null
+    }
   }
 }
 ```
