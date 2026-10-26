@@ -227,7 +227,14 @@ A real response from the IBAN Validator API:
     "nationalCheckDigits": null,
     "expectedCheckDigits": "29",
     "isSEPA": true,
-    "isQRIBAN": false
+    "isQRIBAN": false,
+    "checks": {
+      "country": true,
+      "length": true,
+      "format": true,
+      "checksum": true,
+      "nationalCheckDigits": null
+    }
   }
 }
 ```

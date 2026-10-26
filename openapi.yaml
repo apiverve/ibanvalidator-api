@@ -70,6 +70,12 @@ paths:
                   expectedCheckDigits: '29'
                   isSEPA: true
                   isQRIBAN: false
+                  checks:
+                    country: true
+                    length: true
+                    format: true
+                    checksum: true
+                    nationalCheckDigits: null
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
