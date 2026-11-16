@@ -73,6 +73,8 @@ class IbanvalidatorData {
   String? expectedCheckDigits;
   bool? isSEPA;
   bool? isQRIBAN;
+  bool? isEU;
+  bool? isEEA;
   IbanvalidatorDataChecks? checks;
 
   IbanvalidatorData({
@@ -93,6 +95,8 @@ class IbanvalidatorData {
     this.expectedCheckDigits,
     this.isSEPA,
     this.isQRIBAN,
+    this.isEU,
+    this.isEEA,
     this.checks,
   });
 
@@ -114,6 +118,8 @@ class IbanvalidatorData {
       expectedCheckDigits: json['expectedCheckDigits'],
       isSEPA: json['isSEPA'],
       isQRIBAN: json['isQRIBAN'],
+      isEU: json['isEU'],
+      isEEA: json['isEEA'],
       checks: json['checks'] != null ? IbanvalidatorDataChecks.fromJson(json['checks']) : null,
     );
 }

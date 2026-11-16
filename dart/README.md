@@ -1,6 +1,6 @@
 # IBAN Validator API - Dart/Flutter Client
 
-IBAN Validator checks an IBAN's mod-97 checksum, its length and format for the country, and national check digits where the country defines them. It returns whether the IBAN is valid, the country and the reasons it fails. Paid plans add the bank code, branch code and account number, the correct check digits and the SEPA flag.
+IBAN Validator checks an IBAN's mod-97 checksum, its length and format for the country, and national check digits where the country defines them. It returns whether the IBAN is valid, the country and the reasons it fails. Paid plans add the bank code, branch code and account number, the correct check digits, and the SEPA, EU and EEA flags.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_ibanvalidator.svg)](https://pub.dev/packages/apiverve_ibanvalidator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_ibanvalidator: ^1.2.5
+  apiverve_ibanvalidator: ^1.2.6
 ```
 
 Then run:
@@ -69,6 +69,8 @@ void main() async {
     "expectedCheckDigits": "29",
     "isSEPA": true,
     "isQRIBAN": false,
+    "isEU": false,
+    "isEEA": false,
     "checks": {
       "country": true,
       "length": true,
