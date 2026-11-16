@@ -6,7 +6,7 @@ info:
     the country, and national check digits where the country defines them. It
     returns whether the IBAN is valid, the country and the reasons it fails.
     Paid plans add the bank code, branch code and account number, the correct
-    check digits and the SEPA flag.
+    check digits, and the SEPA, EU and EEA flags.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -70,6 +70,8 @@ paths:
                   expectedCheckDigits: '29'
                   isSEPA: true
                   isQRIBAN: false
+                  isEU: false
+                  isEEA: false
                   checks:
                     country: true
                     length: true

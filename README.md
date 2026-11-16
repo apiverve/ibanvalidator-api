@@ -1,6 +1,6 @@
 # [IBAN Validator API](https://apiverve.com/marketplace/ibanvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-IBAN Validator checks an IBAN&#x27;s mod-97 checksum, its length and format for the country, and national check digits where the country defines them. It returns whether the IBAN is valid, the country and the reasons it fails. Paid plans add the bank code, branch code and account number, the correct check digits and the SEPA flag.
+IBAN Validator checks an IBAN&#x27;s mod-97 checksum, its length and format for the country, and national check digits where the country defines them. It returns whether the IBAN is valid, the country and the reasons it fails. Paid plans add the bank code, branch code and account number, the correct check digits, and the SEPA, EU and EEA flags.
 
 The IBAN Validator API provides a simple, reliable way to integrate iban validator functionality into your applications. Built for developers who need production-ready iban validator capabilities without the complexity of building from scratch.
 
@@ -228,6 +228,8 @@ A real response from the IBAN Validator API:
     "expectedCheckDigits": "29",
     "isSEPA": true,
     "isQRIBAN": false,
+    "isEU": false,
+    "isEEA": false,
     "checks": {
       "country": true,
       "length": true,
