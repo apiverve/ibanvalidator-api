@@ -1,6 +1,6 @@
 # IBAN Validator API - PHP Package
 
-IBAN Validator checks an IBAN's mod-97 checksum, its length and format for the country, and national check digits where the country defines them. It returns whether the IBAN is valid, the country and the reasons it fails. Paid plans add the bank code, branch code and account number, the correct check digits and the SEPA flag.
+IBAN Validator checks an IBAN's mod-97 checksum, its length and format for the country, and national check digits where the country defines them. It returns whether the IBAN is valid, the country and the reasons it fails. Paid plans add the bank code, branch code and account number, the correct check digits, and the SEPA, EU and EEA flags.
 
 ## Installation
 
@@ -86,6 +86,8 @@ $client = new Client(
     "expectedCheckDigits": "29",
     "isSEPA": true,
     "isQRIBAN": false,
+    "isEU": false,
+    "isEEA": false,
     "checks": {
       "country": true,
       "length": true,
