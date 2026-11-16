@@ -42,6 +42,8 @@ declare module '@apiverve/ibanvalidator' {
       expectedCheckDigits: null | string;
       isSEPA:              boolean | null;
       isQRIBAN:            boolean | null;
+      isEU:                boolean | null;
+      isEEA:               boolean | null;
       checks:              Checks;
   }
   
