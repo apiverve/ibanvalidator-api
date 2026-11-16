@@ -83,6 +83,12 @@ namespace APIVerve.API.IBANValidator
         [JsonProperty("isQRIBAN")]
         public bool? IsQriban { get; set; }
 
+        [JsonProperty("isEU")]
+        public bool? IsEu { get; set; }
+
+        [JsonProperty("isEEA")]
+        public bool? IsEea { get; set; }
+
         [JsonProperty("checks")]
         public Checks Checks { get; set; }
     }
